@@ -111,6 +111,7 @@ export async function fetchFilteredInvoices(
       ORDER BY invoices.date DESC
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
+    // OFFSET rows are skipped before starting to count the LIMIT rows that are returned.
 
     return invoices.rows;
   } catch (error) {

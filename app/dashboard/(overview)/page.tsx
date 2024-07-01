@@ -8,7 +8,6 @@ import CardWrapper from '@/app/ui/dashboard/cards';
 import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardSkeleton } from '@/app/ui/skeletons';
 
 
- 
 export default async function Page() {
     
     // PARALELL DATA FETCHING
