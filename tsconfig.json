@@ -31,6 +31,5 @@
     "app/lib/placeholder-data.ts",
     "scripts/seed.js"
   ],
-  "exclude": ["node_modules",
-    "**/_seed"]
+  "exclude": ["node_modules"]
 }
