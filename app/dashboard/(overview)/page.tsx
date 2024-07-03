@@ -6,23 +6,29 @@ import { lusitana } from '@/app/ui/fonts';
 // import { fetchCardData } from '@/app/lib/data';
 import CardWrapper from '@/app/ui/dashboard/cards';
 import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardSkeleton } from '@/app/ui/skeletons';
+import { Metadata } from 'next';
+
+// Nested Pages metadata will overrride parent layout metadata
+export const metadata: Metadata = {
+  title: 'Home',
+};
 
 
 export default async function Page() {
-    
-    // PARALELL DATA FETCHING
-    // const [ cardData] = await Promise.all([
-    //     fetchCardData(),
-    // ]);
-    // const { totalPaidInvoices, totalPendingInvoices, numberOfInvoices, numberOfCustomers } = await fetchCardData()
 
-    // WATERFALL DATA FETCHING
-    // console.log("Fetching revenue...");
-    // const revenue = await fetchRevenue();
-    // console.log("Fetching latest invoices...");
-    // const latestInvoices = await fetchLatestInvoices();
-    // console.log("Fetching card data...");
-    // const { totalPaidInvoices, totalPendingInvoices, numberOfInvoices, numberOfCustomers } = await fetchCardData();
+  // PARALELL DATA FETCHING
+  // const [ cardData] = await Promise.all([
+  //     fetchCardData(),
+  // ]);
+  // const { totalPaidInvoices, totalPendingInvoices, numberOfInvoices, numberOfCustomers } = await fetchCardData()
+
+  // WATERFALL DATA FETCHING
+  // console.log("Fetching revenue...");
+  // const revenue = await fetchRevenue();
+  // console.log("Fetching latest invoices...");
+  // const latestInvoices = await fetchLatestInvoices();
+  // console.log("Fetching card data...");
+  // const { totalPaidInvoices, totalPendingInvoices, numberOfInvoices, numberOfCustomers } = await fetchCardData();
 
   return (
     <main>
@@ -50,7 +56,7 @@ export default async function Page() {
         <Suspense fallback={<LatestInvoicesSkeleton />}>
           <LatestInvoices />
         </Suspense>
-        
+
       </div>
     </main>
   );
